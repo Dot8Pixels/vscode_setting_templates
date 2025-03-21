@@ -1,5 +1,5 @@
 {
-  "name": "Python 3.11 Dev Container",
+  "name": "Python Dev Container",
   "build": {
     "dockerfile": "../Dockerfile"
   },
