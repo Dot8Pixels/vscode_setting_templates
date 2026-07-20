@@ -1,0 +1,617 @@
+{
+    // ============================================================================
+    // VS Code Settings — Dracula theme replica (no extension required)
+    // Path: profiles/1afb8a31/settings.json
+    //
+    // How to tweak:
+    //   - Change any hex color (e.g. "#ff79c6" = pink) to another in the palette:
+    //       bg       #282a36   current  #44475a   fg       #f8f8f2
+    //       comment  #6272a4   cyan     #8be9fd   green    #50fa7b
+    //       orange   #ffb86c   pink     #ff79c6   purple   #bd93f9
+    //       red      #ff5555   yellow   #f1fa8c
+    //     (alpha = add 2 hex digits, e.g. "#ff79c655" = ~33% pink)
+    //   - After editing: Ctrl+Shift+P → "Reload Window"
+    // ============================================================================
+
+    // ---------------------------------------------------------------------------
+    // SECTION 1: Window & global editor behavior
+    // ---------------------------------------------------------------------------
+    "window.zoomLevel": 3,
+
+    // Bracket pair colorization — colors each () [] {} pair differently.
+    "editor.bracketPairColorization.enabled": true,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": false,
+
+    // Indentation + bracket guides drawn in the editor gutter area.
+    "editor.guides.bracketPairs": "active",            // only highlight the pair under cursor
+    "editor.guides.bracketPairsHorizontal": "active",  // horizontal bracket pairs too
+    "editor.guides.indentation": true,                  // draw vertical indent lines
+    "editor.guides.highlightActiveIndentation": true,   // brighten the active indent level
+
+    // Semantic tokens (TS / Python / Rust) get type-aware coloring.
+    "editor.semanticHighlighting.enabled": true,
+
+    // Caret animation — smooth phase glow matching Dracula's polished look.
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorBlinking": "phase",
+
+    // Only show whitespace dots inside a selection (cleaner reading otherwise).
+    "editor.renderWhitespace": "selection",
+
+    // Minimap shows colored blocks instead of tiny characters.
+    "editor.minimap.renderCharacters": false,
+
+    // Font — fallback chain: JetBrains Mono → Fira Code → Cascadia → Consolas.
+    // Install any one of these for best result; otherwise Consolas is used.
+    "editor.fontFamily": "'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,    // turns => into arrows etc. (needs a ligature font)
+    "editor.fontSize": 14,
+    "editor.lineHeight": 19,
+
+    // Terminal font synced to the editor font.
+    "terminal.integrated.fontFamily": "'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace",
+    "terminal.integrated.fontSize": 14,
+
+    // File icon theme — vs-seti is built into VS Code (no extension needed).
+    "workbench.iconTheme": "vs-seti",
+
+    // Base theme onto which we overlay Dracula colors.
+    "workbench.colorTheme": "Dark+",
+
+    // ---------------------------------------------------------------------------
+    // SECTION 2: workbench.colorCustomizations — the ENTIRE UI chrome
+    // Override any of these to change buttons, panels, sidebars, etc.
+    // ---------------------------------------------------------------------------
+    "workbench.colorCustomizations": {
+        // ----- Activity bar (leftmost icon strip) -----
+        // activeBorder = the pink vertical stripe on the selected icon.
+        "activityBar.background": "#282a36",
+        "activityBar.foreground": "#f8f8f2",
+        "activityBar.activeBackground": "#282a3600",   // transparent: no fill box, just the line
+        "activityBar.activeBorder": "#ff79c6",          // ← pink left stripe on active icon
+        "activityBar.activeFocusBorder": "#ff79c6",
+        "activityBar.inactiveForeground": "#b9b9c0",    // muted off-white for unselected
+        "activityBar.border": "#191a21",                // right edge separating it from sidebar
+        "activityBar.dropBackground": "#44475a99",
+        "activityBarBadge.background": "#ff79c6",       // pink count badge (e.g. file changes)
+        "activityBarBadge.foreground": "#282a36",
+
+        // ----- Badges (small count chips) -----
+        "badge.background": "#44475a",
+        "badge.foreground": "#f8f8f2",
+
+        // ----- Buttons (primary action buttons in dialogs) -----
+        "button.background": "#bd93f9",                 // purple
+        "button.foreground": "#282a36",
+        "button.hoverBackground": "#caa9fa",
+
+        // ----- Checkboxes -----
+        "checkbox.background": "#44475a",
+        "checkbox.border": "#21222c",
+        "checkbox.foreground": "#f8f8f2",
+
+        // ----- Debug toolbar (floating toolbar while debugging) -----
+        "debugToolBar.background": "#21222c",
+
+        // ----- Description / help text -----
+        "descriptionForeground": "#6272a4",
+
+        // ----- Diff editor (git change highlighting) -----
+        "diffEditor.insertedTextBackground": "#50fa7b33",  // green tint on added lines
+        "diffEditor.removedTextBackground": "#ff555533",    // red tint on removed lines
+
+        // ----- Dropdowns (select boxes) -----
+        "dropdown.background": "#21222c",
+        "dropdown.border": "#191a21",
+        "dropdown.foreground": "#f8f8f2",
+
+        // ----- Editor (the code area itself) -----
+        "editor.background": "#282a36",                  // main code background
+        "editor.foreground": "#f8f8f2",                  // default text color
+        "editor.findMatchBackground": "#ffb86c66",       // current search hit (orange)
+        "editor.findMatchHighlightBackground": "#ffb86c40", // other search hits (faint orange)
+        "editor.foldBackground": "#bd93f933",             // folded region tint (purple)
+        "editor.inactiveSelectionBackground": "#44475acc", // selection when editor unfocused
+        "editor.lineHighlightBackground": "#44475a57",     // current line highlight
+        "editor.lineHighlightBorder": "#44475a00",         // no border on current line
+        "editor.rangeHighlightBackground": "#44475a33",    // range highlight (e.g. symbol search)
+        "editor.selectionBackground": "#44475acc",         // active selection
+        "editor.selectionHighlightBackground": "#44475acc",// same-word highlights
+        "editor.snippetFinalTabstopHighlightBackground": "#282a36",
+        "editor.snippetTabstopHighlightBackground": "#282a36",
+        "editor.wordHighlightBackground": "#8be9fd33",     // same-symbol highlight (read access)
+        "editor.wordHighlightStrongBackground": "#50fa7b44",// same-symbol highlight (write access)
+        "editorGhostText.foreground": "#6272a4",           // Copilot suggestion preview text
+
+        // ----- Bracket pair colors — each pair level gets its own color -----
+        "editorBracketHighlight.foreground1": "#f8f8f2",
+        "editorBracketHighlight.foreground2": "#ff79c6",
+        "editorBracketHighlight.foreground3": "#8be9fd",
+        "editorBracketHighlight.foreground4": "#50fa7b",
+        "editorBracketHighlight.foreground5": "#bd93f9",
+        "editorBracketHighlight.foreground6": "#ffb86c",
+        "editorBracketHighlight.unexpectedBehavior.foreground1": "#ff555566",
+        "editorBracketHighlight.unexpectedBehavior.foreground2": "#ff555566",
+        // Bracket pair GUIDE lines (vertical line connecting a bracket pair)
+        "editorBracketPairGuide.activeBackground1": "#ff79c655",
+        "editorBracketPairGuide.activeBackground2": "#8be9fd55",
+        "editorBracketPairGuide.activeBackground3": "#50fa7b55",
+        "editorBracketPairGuide.activeBackground4": "#bd93f955",
+        "editorBracketPairGuide.activeBackground5": "#ffb86c55",
+        "editorBracketPairGuide.activeBackground6": "#ff79c655",
+        // Bracket match highlight (the partner of the bracket under cursor)
+        "editorBracketMatch.background": "#6272a466",
+        "editorBracketMatch.border": "#6272a4",
+
+        // ----- Breadcrumbs (path bar above editor) -----
+        "breadcrumb.background": "#21222c",
+        "breadcrumb.foreground": "#6272a4cc",       // dim grey for unselected breadcrumb
+        "breadcrumb.focusForeground": "#f8f8f2",    // brighten on hover
+        "breadcrumb.activeSelectionForeground": "#f8f8f2",
+
+        // ----- CodeLens (inline refs/hints above functions) -----
+        "editorCodeLens.foreground": "#6272a4",
+
+        // ----- Inlay hints (TS/Python type hints inline) -----
+        "editorInlayHint.background": "#282a36",
+        "editorInlayHint.foreground": "#6272a4",
+        "editorInlayHint.typeForeground": "#8be9fd",     // type inlays = cyan
+        "editorInlayHint.parameterForeground": "#ffb86c", // parameter inlays = orange
+
+        // ----- Cursor & error/warning squiggles -----
+        "editorCursor.foreground": "#f8f8f2",
+        "editorError.foreground": "#ff5555",   // red wavy underline
+        "editorWarning.foreground": "#ffb86c", // orange wavy underline
+
+        // ----- Gutter (line numbers, git adds/deletes in margin) -----
+        "editorGutter.addedBackground": "#50fa7b",
+        "editorGutter.background": "#282a36",
+        "editorGutter.commentRangeForeground": "#6272a4",
+        "editorGutter.deletedBackground": "#ff5555",
+        "editorGutter.modifiedBackground": "#8be9fd",
+
+        // ----- Indent guides (vertical indent lines) -----
+        // background = inactive line (dim), activeBackground = line at cursor level (pink)
+        "editorIndentGuide.activeBackground": "#ff79c6",
+        "editorIndentGuide.activeBackground1": "#ff79c6",
+        "editorIndentGuide.background": "#44475a66",
+        "editorIndentGuide.background1": "#44475a66",
+
+        // ----- Line numbers -----
+        "editorLineNumber.activeForeground": "#f8f8f2", // current line = white
+        "editorLineNumber.foreground": "#6272a4cc",    // other lines = dimmer
+
+        // ----- Misc editor chrome -----
+        "editorLink.activeForeground": "#8be9fd",       // clickable links
+        "editorMarkerNavigation.background": "#21222c",// error/warning navigation popup
+        "editorRuler.foreground": "#6272a4",            // vertical ruler
+        "editorWhitespace.foreground": "#ffffff1a",     // whitespace dots (very faint)
+
+        // ----- Overview ruler (the minimap scrollbar area on right) -----
+        // NOTE: all of these MUST have alpha (e.g. "cc") or VS Code warns they obscure content.
+        "editorOverviewRuler.border": "#191a21",
+        "editorOverviewRuler.errorBackground": "#ff5555cc",
+        "editorOverviewRuler.findMatchForeground": "#ffb86ccc",
+        "editorOverviewRuler.infoForeground": "#8be9fdcc",
+        "editorOverviewRuler.modifiedBackground": "#8be9fdcc",
+        "editorOverviewRuler.rangeHighlightForeground": "#bd93f9cc",
+        "editorOverviewRuler.warningBackground": "#ffb86ccc",
+        "editorOverviewRuler.warningForeground": "#ffb86ccc",
+        "editorOverviewRuler.wordHighlightBackground": "#bd93f9cc",
+        "editorOverviewRuler.wordHighlightStrongBackground": "#50fa7bcc",
+
+        // ----- Suggest / autocomplete widget -----
+        "editorSuggestWidget.background": "#21222c",
+        "editorSuggestWidget.border": "#191a21",
+        "editorSuggestWidget.foreground": "#f8f8f2",
+        "editorSuggestWidget.highlightForeground": "#ff79c6",  // matched chars in suggestions
+        "editorSuggestWidget.selectedBackground": "#44475a",
+
+        // ----- Generic editor widget background (hover popup, find widget, etc.) -----
+        "editorWidget.background": "#21222c",
+        "editorWidget.border": "#191a21",
+        "editorHoverWidget.statusBarBackground": "#21222c", // hover popup footer
+
+        // ----- Editor group (tab split area) -----
+        "editorGroup.background": "#191a21",
+        "editorGroup.border": "#191a21",
+        "editorGroup.dropBackground": "#44475a99",
+        "editorGroupHeader.noTabsBackground": "#21222c",
+        "editorGroupHeader.tabsBackground": "#21222c",
+        "editorGroupHeader.tabsBorder": "#191a21",
+
+        // ----- Hover widget (tooltip popup on hover) -----
+        "editorHoverWidget.background": "#282a36",
+        "editorHoverWidget.border": "#21222c",
+
+        // ----- Extension marketplace buttons (if visible) -----
+        "extensionButton.prominentBackground": "#50fa7b50",
+        "extensionButton.prominentHoverBackground": "#50fa7b99",
+
+        // ----- Focus border (keyboard navigation) -----
+        "focusBorder": "#6272a4",
+
+        // ----- Global foreground -----
+        "foreground": "#f8f8f2",
+
+        // ----- Git file decorations in Explorer (colored letters) -----
+        "gitDecoration.conflictingResourceForeground": "#ff5555",
+        "gitDecoration.deletedResourceForeground": "#ff5555",
+        "gitDecoration.ignoredResourceForeground": "#6272a4",
+        "gitDecoration.modifiedResourceForeground": "#8be9fd",
+        "gitDecoration.renamedResourceForeground": "#8be9fd",
+        "gitDecoration.stageModifiedResourceForeground": "#50fa7b",
+        "gitDecoration.stageDeletedResourceForeground": "#ffb86c",
+        "gitDecoration.submoduleResourceForeground": "#bd93f9",
+        "gitDecoration.untrackedResourceForeground": "#50fa7b",
+
+        // ----- Input boxes (search, find, settings inputs) -----
+        "input.background": "#21222c",
+        "input.border": "#191a21",
+        "input.foreground": "#f8f8f2",
+        "input.placeholderForeground": "#6272a4",
+        "inputOption.activeBorder": "#bd93f9",  // outline on active toggle/checkbox in inputs
+        "inputValidation.errorBackground": "#ff555533",
+        "inputValidation.errorBorder": "#ff5555",
+        "inputValidation.infoBackground": "#8be9fd33",
+        "inputValidation.infoBorder": "#8be9fd",
+        "inputValidation.warningBackground": "#ffb86c33",
+        "inputValidation.warningBorder": "#ffb86c",
+
+        // ----- List / Explorer / Tree items -----
+        // NOTE: VS Code's theming API doesn't expose a "left border on selected tree row"
+        // — only full-row fill + outline. We use pink outline on keyboard-focused items.
+        "list.activeSelectionBackground": "#44475a",     // clicked/active row fill
+        "list.activeSelectionForeground": "#f8f8f2",
+        "list.dropBackground": "#44475a",
+        "list.errorForeground": "#ff5555",
+        "list.focusBackground": "#44475a99",              // keyboard-focused row
+        "list.focusForeground": "#f8f8f2",
+        "list.focusHighlightBackground": "#ff79c655",     // pink tint when typing to filter
+        "list.focusOutline": "#ff79c6",                  // ← PINK outline on focused row
+        "list.highlightForeground": "#bd93f9",
+        "list.hoverBackground": "#44475a79",
+        "list.hoverForeground": "#f8f8f2",
+        "list.inactiveFocusBackground": "#44475a99",
+        "list.inactiveFocusOutline": "#ff79c699",        // softer pink outline when unfocused
+        "list.inactiveSelectionBackground": "#44475a77",  // selected but window unfocused
+        "list.inactiveSelectionForeground": "#f8f8f2",
+        "list.selectionBackground": "#ff79c655",          // pink tint in dedicated selection contexts
+        "list.invalidItemForeground": "#ff5555",
+        "list.warningForeground": "#ffb86c",
+
+        // ----- Filter widget (the little search box on top of a list) -----
+        "listFilterWidget.background": "#21222c",
+        "listFilterWidget.noMatchesOutline": "#ff5555",  // red outline when no match
+        "listFilterWidget.outline": "#44475a",
+
+        // ----- Context menu / right-click menu -----
+        "menu.background": "#21222c",
+        "menu.foreground": "#f8f8f2",
+        "menu.selectionBackground": "#44475a",
+        "menu.selectionForeground": "#f8f8f2",
+        "menu.separatorBackground": "#44475a",
+
+        // ----- Menu bar (top File/Edit menu on Linux/Windows) -----
+        "menubar.selectionBackground": "#44475a",
+        "menubar.selectionForeground": "#f8f8f2",
+
+        // ----- 3-way merge editor -----
+        "merge.border": "#191a21",
+        "merge.currentContentBackground": "#50fa7b33",
+        "merge.currentHeaderBackground": "#50fa7b99",
+        "merge.incomingContentBackground": "#8be9fd33",
+        "merge.incomingHeaderBackground": "#8be9fd99",
+
+        // ----- Minimap -----
+        "minimap.background": "#21222c",
+        "minimapSlider.activeBackground": "#bd93f9cc",
+        "minimapSlider.background": "#44475a55",
+        "minimapSlider.hoverBackground": "#44475a99",
+
+        // ----- Notifications -----
+        "notificationCenterHeader.background": "#21222c",
+        "notificationCenterHeader.foreground": "#f8f8f2",
+        "notificationLink.foreground": "#8be9fd",
+        "notifications.background": "#21222c",
+        "notifications.border": "#191a21",
+        "notifications.foreground": "#f8f8f2",
+        "notificationToast.border": "#191a21",
+
+        // ----- Panel (bottom panel — terminal, output, problems, debug console) -----
+        "panel.background": "#21222c",
+        "panel.border": "#191a21",
+        "panelTitle.activeBorder": "#ff79c6",   // pink underline on active panel tab
+        "panelTitle.activeForeground": "#f8f8f2",
+        "panelTitle.inactiveForeground": "#6272a4",
+
+        // ----- Peek view (inline reference viewer) -----
+        "peekView.border": "#bd93f9",
+        "peekViewEditor.background": "#282a36",
+        "peekViewEditor.matchHighlightBackground": "#ffb86c44",
+        "peekViewResult.background": "#21222c",
+        "peekViewResult.lineForeground": "#f8f8f2",
+        "peekViewResult.matchHighlightBackground": "#ffb86c44",
+        "peekViewResult.selectionBackground": "#44475a",
+        "peekViewTitle.background": "#191a21",
+        "peekViewTitleLabel.foreground": "#f8f8f2",
+        "peekViewTitleDescription.foreground": "#6272a4",
+
+        // ----- Picker groups (Quick Pick "Open File" etc.) -----
+        "pickerGroup.border": "#bd93f9",
+        "pickerGroup.foreground": "#8be9fd",
+
+        // ----- Progress bar (long-running operations) -----
+        "progressBar.background": "#ff79c6",
+
+        // ----- Scrollbars -----
+        "scrollbar.shadow": "#191a21",
+        "scrollbarSlider.activeBackground": "#bd93f999",  // clicking-dragging
+        "scrollbarSlider.background": "#44475a99",        // idle
+        "scrollbarSlider.hoverBackground": "#44475acc",   // hovered
+
+        // ----- Selection background (general, e.g. text selection outside editor) -----
+        "selection.background": "#44475acc",
+
+        // ----- Settings UI -----
+        "settings.checkboxBackground": "#44475a",
+        "settings.dropdownBackground": "#21222c",
+        "settings.dropdownListBorder": "#191a21",
+        "settings.headerForeground": "#f8f8f2",
+        "settings.modifiedItemIndicator": "#ffb86c",  // orange dot on changed settings
+        "settings.numberInputBackground": "#21222c",
+        "settings.numberInputBorder": "#191a21",
+        "settings.numberInputForeground": "#f8f8f2",
+        "settings.textInputBackground": "#21222c",
+        "settings.textInputBorder": "#191a21",
+        "settings.textInputForeground": "#f8f8f2",
+
+        // ----- Sidebar (Explorer, Search, Git, etc.) -----
+        "sideBar.background": "#21222c",
+        "sideBar.border": "#191a21",
+        "sideBar.dropBackground": "#44475a99",
+        "sideBar.foreground": "#f8f8f2",
+        "sideBarSectionHeader.background": "#282a36",
+        "sideBarSectionHeader.foreground": "#f8f8f2",
+        "sideBarTitle.foreground": "#f8f8f2",
+
+        // ----- Status bar (bottom row) -----
+        // NOTE: VS Code doesn't expose a token to color *just* git branch — all items share
+        // the row. Official Dracula uses a dark bar here. Debug mode below overrides to pink.
+        "statusBar.background": "#191a21",
+        "statusBar.border": "#191a21",
+        "statusBar.debuggingBackground": "#ff79c6",     // pink when actively debugging
+        "statusBar.debuggingBorder": "#ff79c6",
+        "statusBar.debuggingForeground": "#282a36",
+        "statusBar.foreground": "#f8f8f2",
+        "statusBar.noFolderBackground": "#191a21",       // when no folder is open
+        "statusBar.noFolderForeground": "#f8f8f2",
+        "statusBarItem.activeBackground": "#bd93f9",
+        "statusBarItem.hoverBackground": "#44475a",
+        "statusBarItem.prominentBackground": "#ff5555",
+        "statusBarItem.prominentHoverBackground": "#ffb86c",
+
+        // ----- Tabs (file tabs at top of editor) -----
+        // activeBorderTop = pink line on top of the active tab (Dracula's signature accent)
+        "tab.activeBackground": "#282a36",
+        "tab.activeBorder": "#282a36",
+        "tab.activeBorderTop": "#ff79c6",   // ← PINK top stripe on active tab
+        "tab.activeForeground": "#f8f8f2",
+        "tab.activeModifiedBorder": "#ffb86c",  // orange dot on modified active tab
+        "tab.border": "#191a21",
+        "tab.hoverBackground": "#44475a99",
+        "tab.hoverBorder": "#ff79c6",         // pink when hovered
+        "tab.hoverForeground": "#f8f8f2",
+        "tab.inactiveBackground": "#21222c",
+        "tab.inactiveForeground": "#6272a4",
+        "tab.inactiveModifiedBorder": "#8be9fd",
+        "tab.unfocusedActiveBorder": "#282a36",
+        "tab.unfocusedActiveBorderTop": "#bd93f980",
+        "tab.unfocusedActiveForeground": "#f8f8f2aa",
+        "tab.unfocusedHoverBackground": "#44475a99",
+        "tab.unfocusedInactiveBackground": "#21222c",
+        "tab.unfocusedInactiveForeground": "#6272a44d",
+
+        // ----- Integrated terminal ANSI palette -----
+        "terminal.ansiBlack": "#21222c",
+        "terminal.ansiBlue": "#bd93f9",
+        "terminal.ansiBrightBlack": "#6272a4",
+        "terminal.ansiBrightBlue": "#caa9fa",
+        "terminal.ansiBrightCyan": "#8df0f7",
+        "terminal.ansiBrightGreen": "#7af0ca",
+        "terminal.ansiBrightMagenta": "#ff92d0",
+        "terminal.ansiBrightRed": "#ff8e8e",
+        "terminal.ansiBrightWhite": "#ffffff",
+        "terminal.ansiBrightYellow": "#ffff00",
+        "terminal.ansiCyan": "#8be9fd",
+        "terminal.ansiGreen": "#50fa7b",
+        "terminal.ansiMagenta": "#ff79c6",
+        "terminal.ansiRed": "#ff5555",
+        "terminal.ansiWhite": "#f8f8f2",
+        "terminal.ansiYellow": "#ffb86c",
+
+        // ----- Integrated terminal chrome -----
+        "terminal.background": "#282a36",
+        "terminal.border": "#191a21",
+        "terminal.findMatchBackground": "#ffb86c66",
+        "terminal.findMatchHighlightBackground": "#ffb86c55",
+        "terminal.foreground": "#f8f8f2",
+        "terminal.hoverBackground": "#44475a99",
+        "terminal.selectionBackground": "#44475acc",
+        "terminalCursor.background": "#282a36",
+        "terminalCursor.foreground": "#50fa7b",   // green cursor block
+
+        // ----- Markdown / text rendering -----
+        "textBlockQuote.background": "#282a36",
+        "textBlockQuote.border": "#bd93f9",
+        "textCodeBlock.background": "#21222c",
+        "textLink.activeForeground": "#8be9fd",
+        "textLink.foreground": "#8be9fd",
+        "textPreformat.foreground": "#ffb86c",
+        "textSeparator.foreground": "#6272a4",
+
+        // ----- Title bar (top of window) -----
+        "titleBar.activeBackground": "#21222c",
+        "titleBar.activeForeground": "#f8f8f2",
+        "titleBar.border": "#191a21",
+        "titleBar.inactiveBackground": "#191a21",
+        "titleBar.inactiveForeground": "#6272a4",
+
+        // ----- Walkthrough / welcome pages -----
+        "walkThrough.embeddedCodeBackground": "#21222c",
+        "welcomePage.buttonBackground": "#bd93f9",
+        "welcomePage.buttonHoverBackground": "#caa9fa",
+
+        // ----- Widget shadow -----
+        "widget.shadow": "#000000aa",
+
+        // ----- Quick input (Command Palette / Quick Open) -----
+        "quickInput.background": "#282a36",
+        "quickInput.foreground": "#f8f8f2",
+        "quickInputList.focusBackground": "#44475a",
+        "quickInputTitle.background": "#21222c",
+
+        // ----- Keybinding labels (shown in tooltips & Command Palette) -----
+        "keybindingLabel.background": "#21222c",
+        "keybindingLabel.border": "#191a21",
+        "keybindingLabel.foreground": "#8be9fd",  // cyan shortcut chips
+        "keybindingLabel.bottomBorder": "#44475a",
+
+        // ----- Symbol icons (outline view / breadcrumb symbols) -----
+        "symbolIcon.textForeground": "#f8f8f2",
+        "symbolIcon.arrayForeground": "#ffb86c",
+        "symbolIcon.booleanForeground": "#bd93f9",
+        "symbolIcon.classForeground": "#8be9fd",
+        "symbolIcon.colorForeground": "#ff79c6",
+        "symbolIcon.constantForeground": "#bd93f9",
+        "symbolIcon.constructorForeground": "#50fa7b",
+        "symbolIcon.enumForeground": "#bd93f9",
+        "symbolIcon.eventForeground": "#ff79c6",
+        "symbolIcon.fieldForeground": "#50fa7b",
+        "symbolIcon.fileForeground": "#f8f8f2",
+        "symbolIcon.folderForeground": "#f8f8f2",
+        "symbolIcon.functionForeground": "#50fa7b",
+        "symbolIcon.interfaceForeground": "#8be9fd",
+        "symbolIcon.keyForeground": "#ffb86c",
+        "symbolIcon.keywordForeground": "#ff79c6",
+        "symbolIcon.methodForeground": "#50fa7b",
+        "symbolIcon.moduleForeground": "#bd93f9",
+        "symbolIcon.namespaceForeground": "#bd93f9",
+        "symbolIcon.nullForeground": "#bd93f9",
+        "symbolIcon.numberForeground": "#bd93f9",
+        "symbolIcon.objectForeground": "#ffb86c",
+        "symbolIcon.operatorForeground": "#ff79c6",
+        "symbolIcon.packageForeground": "#8be9fd",
+        "symbolIcon.propertyForeground": "#50fa7b",
+        "symbolIcon.referenceForeground": "#50fa7b",
+        "symbolIcon.snippetForeground": "#50fa7b",
+        "symbolIcon.stringForeground": "#f1fa8c",
+        "symbolIcon.structForeground": "#8be9fd",
+        "symbolIcon.typeParameterForeground": "#8be9fd",
+        "symbolIcon.unitForeground": "#bd93f9",
+        "symbolIcon.variableForeground": "#f8f8f2",
+
+        // ----- Command Center (search box in title bar, if shown) -----
+        "commandCenter.background": "#21222c",
+        "commandCenter.border": "#191a21",
+        "commandCenter.foreground": "#f8f8f2",
+        "commandCenter.activeBackground": "#44475a",
+        "commandCenter.activeForeground": "#f8f8f2",
+        "commandCenter.inactiveForeground": "#6272a4"
+    },
+
+    // ---------------------------------------------------------------------------
+    // SECTION 3: editor.tokenColorCustomizations — SYNTAX highlighting
+    // Each rule maps a TextMate scope to a foreground color (and optional fontStyle).
+    // To override Dracula colors for a specific token type, change the hex here.
+    // ---------------------------------------------------------------------------
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            // ----- Comments -----
+            { "scope": "comment", "settings": { "foreground": "#6272a4", "fontStyle": "italic" } },
+            { "scope": "comment.block.documentation", "settings": { "foreground": "#6272a4" } },
+
+            // ----- Strings -----
+            { "scope": "string", "settings": { "foreground": "#f1fa8c" } },
+            { "scope": "string.regexp", "settings": { "foreground": "#f1fa8c" } },
+            { "scope": "string.interpolated", "settings": { "foreground": "#f1fa8c" } },
+            { "scope": "string.quoted", "settings": { "foreground": "#f1fa8c" } },
+
+            // ----- Constants -----
+            { "scope": "constant.numeric", "settings": { "foreground": "#bd93f9" } },     // numbers
+            { "scope": "constant.language", "settings": { "foreground": "#bd93f9" } },    // true/false/null
+            { "scope": "constant.character", "settings": { "foreground": "#bd93f9" } },
+            { "scope": "constant.character.escape", "settings": { "foreground": "#ff79c6" } }, // \n, \t
+
+            // ----- Keywords -----
+            { "scope": "keyword", "settings": { "foreground": "#ff79c6", "fontStyle": "italic" } },
+            { "scope": "keyword.control", "settings": { "foreground": "#ff79c6", "fontStyle": "italic" } }, // if/else/for
+            { "scope": "keyword.operator", "settings": { "foreground": "#ff79c6" } },
+            { "scope": "keyword.control.import", "settings": { "foreground": "#ff79c6" } }, // import/from
+
+            // ----- Storage (var/let/const type modifiers) -----
+            { "scope": "storage", "settings": { "foreground": "#ff79c6", "fontStyle": "italic" } },
+            { "scope": "storage.type", "settings": { "foreground": "#8be9fd", "fontStyle": "italic" } },     // int, string
+            { "scope": "storage.modifier", "settings": { "foreground": "#ff79c6", "fontStyle": "italic" } }, // static, public
+
+            // ----- Entities (functions, types, tags) -----
+            { "scope": "entity.name.function", "settings": { "foreground": "#50fa7b" } },     // function names
+            { "scope": "entity.name.type", "settings": { "foreground": "#8be9fd" } },        // type names
+            { "scope": "entity.name.class", "settings": { "foreground": "#8be9fd" } },
+            { "scope": "entity.name.function.preprocessor", "settings": { "foreground": "#ff79c6" } },
+            { "scope": "entity.name.section", "settings": { "foreground": "#bd93f9" } },     // markdown headings
+            { "scope": "entity.name.tag", "settings": { "foreground": "#ff79c6" } },         // HTML tags
+            { "scope": "entity.other.attribute-name", "settings": { "foreground": "#50fa7b" } }, // HTML attributes
+            { "scope": "entity.other.inherited-class", "settings": { "foreground": "#8be9fd", "fontStyle": "italic" } },
+
+            // ----- Variables -----
+            { "scope": "variable", "settings": { "foreground": "#f8f8f2" } },
+            { "scope": "variable.parameter", "settings": { "foreground": "#ffb86c", "fontStyle": "italic" } }, // fn params
+            { "scope": "variable.language", "settings": { "foreground": "#bd93f9", "fontStyle": "italic" } }, // this/self
+            { "scope": "variable.other", "settings": { "foreground": "#f8f8f2" } },
+
+            // ----- Support (built-in library stuff) -----
+            { "scope": "support.function", "settings": { "foreground": "#8be9fd" } },  // console.log
+            { "scope": "support.class", "settings": { "foreground": "#8be9fd" } },
+            { "scope": "support.type", "settings": { "foreground": "#8be9fd" } },
+            { "scope": "support.constant", "settings": { "foreground": "#bd93f9" } },
+            { "scope": "support.variable", "settings": { "foreground": "#50fa7b" } },
+
+            // ----- Punctuation -----
+            { "scope": "punctuation.definition.string", "settings": { "foreground": "#f1fa8c" } },
+            { "scope": "punctuation.definition.comment", "settings": { "foreground": "#6272a4" } },
+            { "scope": "punctuation.separator", "settings": { "foreground": "#f8f8f2" } },
+            { "scope": "punctuation.terminator", "settings": { "foreground": "#f8f8f2" } },
+
+            // ----- Meta -----
+            { "scope": "meta.function-call", "settings": { "foreground": "#50fa7b" } },
+            { "scope": "meta.preprocessor", "settings": { "foreground": "#ff79c6" } },
+            { "scope": "meta.tag", "settings": { "foreground": "#f8f8f2" } },
+
+            // ----- Markup (markdown / restructuredtext) -----
+            { "scope": "markup.heading", "settings": { "foreground": "#bd93f9", "fontStyle": "bold" } },
+            { "scope": "markup.bold", "settings": { "foreground": "#ff79c6", "fontStyle": "bold" } },
+            { "scope": "markup.italic", "settings": { "foreground": "#ff79c6", "fontStyle": "italic" } },
+            { "scope": "markup.underline", "settings": { "foreground": "#ffb86c" } },
+
+            // ----- Diff markup -----
+            { "scope": "markup.inserted", "settings": { "foreground": "#50fa7b" } },
+            { "scope": "markup.deleted", "settings": { "foreground": "#ff5555" } },
+            { "scope": "markup.changed", "settings": { "foreground": "#ffb86c" } },
+            { "scope": "markup.raw", "settings": { "foreground": "#f1fa8c" } },
+            { "scope": "markup.quote", "settings": { "foreground": "#6272a4", "fontStyle": "italic" } },
+
+            // ----- Markdown links -----
+            { "scope": "markdown:link", "settings": { "foreground": "#8be9fd" } },
+
+            // ----- JSON -----
+            { "scope": "source.json", "settings": { "foreground": "#f8f8f2" } },
+            { "scope": "source.json support.type.property-name", "settings": { "foreground": "#8be9fd" } },
+
+            // ----- CSS -----
+            { "scope": "source.css", "settings": { "foreground": "#f8f8f2" } },
+            { "scope": "source.css entity.other", "settings": { "foreground": "#ff79c6" } },
+            { "scope": "source.css support", "settings": { "foreground": "#8be9fd" } }
+        ]
+    }
+}
